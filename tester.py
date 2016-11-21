@@ -10,7 +10,7 @@ images = data.iloc[:, 0:].values
 images = images.astype(np.float)
 images = np.multiply(images, 1.0 / 255.0)
 
-IMAGE_TO_DISPLAY = 13
+IMAGE_TO_DISPLAY = 5737
 
 
 ## display image

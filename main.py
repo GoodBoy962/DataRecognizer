@@ -44,7 +44,7 @@ def display(img):
     plt.imshow(one_image, cmap=cm.binary)
 
 
-display(images[IMAGE_TO_DISPLAY])
+# display(images[IMAGE_TO_DISPLAY])
 
 ## labels of train data
 train_data_labels = train_data[[0]].values.ravel()
