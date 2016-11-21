@@ -4,7 +4,8 @@ import pandas as pa
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
-import tensorflow as tf
+# import tensorflow as tf
+from sklearn.ensemble import RandomForestClassifier
 
 ## settings
 LEARNING_RATE = 1e-4
@@ -20,7 +21,7 @@ VALIDATION_SIZE = 2000
 IMAGE_TO_DISPLAY = 10
 
 train_data = pa.read_csv('data/train.csv')
-print("|| rows number: %s || columns number: %s" % train_data.shape)
+print("rows number: %s || columns number: %s" % train_data.shape)
 
 ## split train_data into arrays of 784 digits. 784 = 28*28. images contains images as array of digits
 images = train_data.iloc[:, 1:].values
@@ -72,12 +73,18 @@ validation_labels = labels[:VALIDATION_SIZE]
 train_images = images[VALIDATION_SIZE:]
 train_labels = labels[VALIDATION_SIZE:]
 
+# # weight initialization
+# def weight_variable(shape):
+#     initial = tf.truncated_normal(shape, stddev=0.1)
+#     return tf.Variable(initial)
+#
+# def bias_variable(shape):
+#     initial = tf.constant(0.1, shape=shape)
+#     return tf.Variable(initial)
 
-# weight initialization
-def weight_variable(shape):
-    initial = tf.truncated_normal(shape, stddev=0.1)
-    return tf.Variable(initial)
+classifier = RandomForestClassifier(n_estimators=100)
+classifier.fit(train_data.iloc[:, 1:].values, train_data[[0]].values.ravel())
+pred = classifier.predict(pa.read_csv("data/test.csv"))
 
-def bias_variable(shape):
-    initial = tf.constant(0.1, shape=shape)
-    return tf.Variable(initial)
+np.savetxt('submission_rand_forest.csv', np.c_[range(1, len(pa.read_csv("data/test.csv")) + 1), pred],
+           delimiter=',', header='ImageId,Label', comments='', fmt='%d')
