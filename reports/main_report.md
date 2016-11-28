@@ -1,9 +1,10 @@
-#include "report1.md"
+# Document title
 
-__________________________________________
+## Section 1
+(1)[sections/report1.md]
 
-#include "report2.md"
+## Section 2
+(2)[sections/report2.md]
 
-__________________________________________
-
-#include "report3.md"
+## Section 3
+(3)[sections/report3.md]
