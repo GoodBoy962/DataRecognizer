@@ -1,19 +1,27 @@
-# Title
+!INCLUDE "reports/sections/title_page.md"
 
 
 ________________________________________
+
+#1.Описание набора данных
 
 !INCLUDE "reports/sections/report1.md"
 
 ________________________________________
 
-
+#2.Преобразования с данными
 
 !INCLUDE "reports/sections/report2.md"
 
 ________________________________________
 
+#3.Методы машинного обучения
 
+!INCLUDE "reports/sections/report_sk_classifiers.md"
+
+________________________________________
+
+#4.Оценка точности и временных затрат
 
 !INCLUDE "reports/sections/report3.md"
 
