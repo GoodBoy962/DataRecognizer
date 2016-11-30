@@ -7,3 +7,7 @@ ____________________________________________
 
 1. To run scripts download MNIST data from the link above
 2. To create report run reports/report_gen.sh
+
+____________________________________________
+
+Final [report](reports/report.md)
