@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##Download markdown-pp to generate final report
-##pip install MarkdownPP
+#Download markdown-pp to generate final report
+pip install MarkdownPP
 
-markdown-pp reports/Report.mdpp -o reports/report.md
+markdown-pp Report.mdpp -o report.md

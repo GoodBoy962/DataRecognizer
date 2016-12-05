@@ -13,12 +13,15 @@ images = np.multiply(images, 1.0 / 255.0)
 
 
 ## display image
-def display(img):
-    one_image = img.reshape(28, 28)
+def display():
+    one_image = images[25997].reshape(28, 28)
     plt.axis('off')
     plt.imshow(one_image, cmap=cm.binary)
 
 
-while True:
-    i = raw_input("Enter image id, to display")
-    display(images[i])
+# while True:
+    # i = raw_input("Enter image id, to display")
+# display(images[25999])
+# i = raw_input("next digit")
+
+display()

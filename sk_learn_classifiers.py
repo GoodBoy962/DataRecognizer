@@ -20,7 +20,8 @@ class SKClassifiers:
     def __init__(self):
         super().__init__()
 
-    def desicion_tree(self, train_data):
+    @staticmethod
+    def desicion_tree(train_data):
         # use DecisionTree to fit and predict
         classifier = DecisionTreeClassifier()
         start_time = time.time()
@@ -32,7 +33,8 @@ class SKClassifiers:
                    np.c_[range(1, len(pa.read_csv("data/test.csv")) + 1), pred],
                    delimiter=',', header='ImageId,Label', comments='', fmt='%d')
 
-    def random_forest(self, train_data):
+    @staticmethod
+    def random_forest(train_data):
         # use RandomForestClassifier to fit and predict
         classifier = RandomForestClassifier(n_estimators=100)
         start_time = time.time()
@@ -44,7 +46,8 @@ class SKClassifiers:
                    np.c_[range(1, len(pa.read_csv("data/test.csv")) + 1), pred],
                    delimiter=',', header='ImageId,Label', comments='', fmt='%d')
 
-    def k_neighbors(self, train_data):
+    @staticmethod
+    def k_neighbors(train_data):
         # use KNeighborsClassifier to fit and predict
         classifier = KNeighborsClassifier()
         start_time = time.time()
