@@ -2,7 +2,7 @@ import numpy as np
 from sklearn import tree
 from sklearn import neighbors
 from sklearn import ensemble
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, recall_score
 import pandas as pa
 import time
 
@@ -52,5 +52,5 @@ clf3_prediction = clf3.predict(test_data)
 print("Random forest classifier: {}".format(time.time() - start_time))
 
 # print(accuracy_score(test_target, clf1_prediction))
-print(accuracy_score(test_target, clf2_prediction))
-print(accuracy_score(test_target, clf3_prediction))
+print(recall_score(test_target, clf2_prediction, average=None))
+print(recall_score(test_target, clf3_prediction, average=None))
