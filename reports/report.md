@@ -142,7 +142,7 @@ False negative **(FN)** - ошибочное предсказание отриц
 |Random Forest|93.53|92.74|79.81|
 |kNN|-|-|87.61|
 
-[Accuracy charts](/sections/accuracy_charts)
+[Accuracy charts](/sections/accuracy_charts.png)
 
 
 
