@@ -4,7 +4,7 @@ import pandas as pa
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
-from sk_learn_classifiers import *
+from sk_learn_classifiers import SKClassifiers
 
 # import tensorflow as tf
 ## settings
@@ -29,6 +29,11 @@ images = images.astype(np.float)
 
 ## convert from [0:255] => [0.0:1.0]
 images = np.multiply(images, 1.0 / 255.0)
+
+SKClassifiers.random_forest(train_data)
+SKClassifiers.desicion_tree(train_data)
+# SKClassifiers.k_neighbors(train_data)
+
 image_size = images.shape[1]
 
 ## in this case all images are square
