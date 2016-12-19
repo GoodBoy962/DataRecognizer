@@ -14,7 +14,7 @@ images = np.multiply(images, 1.0 / 255.0)
 
 ## display image
 def display():
-    one_image = images[25997].reshape(28, 28)
+    one_image = images[567].reshape(28, 28)
     plt.axis('off')
     plt.imshow(one_image, cmap=cm.binary)
 
